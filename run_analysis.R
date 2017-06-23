@@ -3,7 +3,6 @@ library(data.table)
 
 
 ##### FEATURES -- COLUMN VARIABLES ####
-#featuresLink = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/features.txt"
 featuresLink = file.path(getwd(), "UCI HAR Dataset/features.txt")
 features <- data.table(read.table(featuresLink))
 
@@ -22,7 +21,6 @@ tfeatures = tfeatures[2,]
 ##### TRAIN DATA #############
 
 #read in the X_train data
-#X_train_file = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/train/X_train.txt"
 X_train_file = file.path(getwd(), "UCI HAR Dataset/train/X_train.txt")
 x_train <- data.table(read.table(X_train_file, col.names=tfeatures))
 
@@ -38,7 +36,6 @@ x_train
 
 
 #read in the Y_train data
-#y_train_file = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/train/Y_train.txt"
 y_train_file = file.path(getwd(), "UCI HAR Dataset/train/Y_train.txt")
 y_train <- data.table(read.table(y_train_file))
 
@@ -53,7 +50,6 @@ summary(y_train)
 
 
 #read in the subject_train data
-#subject_train_Link = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/train/subject_train.txt"
 subject_train_Link = file.path(getwd(), "UCI HAR Dataset/train/subject_train.txt")
 subject_train <- data.table(read.table(subject_train_Link))
 
@@ -78,7 +74,6 @@ dim(x_train_subj_data)
 #3 Uses descriptive activity names to name the activities in the data set
 
 #read in the "activity labels"
-#activityLink = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/activity_labels.txt"
 activityLink = file.path(getwd(), "UCI HAR Dataset/activity_labels.txt")
 activity_labels <- data.table(read.table(activityLink))
 
@@ -106,7 +101,6 @@ head(x_train_subj_data, 60)
 
 #### TEST DATA ######
 #read in the X_test data and label the columns names with the feature variables
-#X_test_file = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/test/X_test.txt"
 X_test_file = file.path(getwd(), "UCI HAR Dataset/test/X_test.txt")
 x_test <- data.table(read.table(X_test_file, col.names=tfeatures))
 
@@ -120,7 +114,6 @@ str(x_test)
 summary(x_test)
 
 #read in the Y_test data
-#y_test_file = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/test/y_test.txt"
 y_test_file = file.path(getwd(), "UCI HAR Dataset/test/y_test.txt")
 y_test <- data.table(read.table(y_test_file))
 
@@ -132,7 +125,6 @@ dim(y_test)
 str(y_test)
 
 #read in the "subject_test" data
-#subject_test_Link = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/test/subject_test.txt"
 subject_test_Link = file.path(getwd(), "UCI HAR Dataset/test/subject_test.txt")
 subject_test <- data.table(read.table(subject_test_Link))
 
@@ -251,8 +243,6 @@ str(tidy_data)
 names(tidy_data)
 
 #creating tidy dataset with row.name=FALSE
-#file_path = "~/Coursera/Data Science Specialization/getting_and_cleaning_data_week_4_ass_data/UCI HAR Dataset/tidy_data.txt"
-
 file_path = file.path(getwd(), "tidy_data.txt")
 write.table(tidy_data, file = file_path, row.name=FALSE) 
 
